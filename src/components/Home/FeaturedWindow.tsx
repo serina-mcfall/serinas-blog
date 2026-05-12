@@ -10,7 +10,7 @@ function FeaturedWindow({ kind, item }: Props) {
   if (!item) return null
   return (
     <article aria-label={`Featured ${kind}`}>
-      <h3>{item.title}</h3>
+      <h2>{item.title}</h2>
       <img src={item.image} alt={item.imageAlt} />
       <p>{item.caption}</p>
       {item.link && <Link to={item.link}>View more →</Link>}

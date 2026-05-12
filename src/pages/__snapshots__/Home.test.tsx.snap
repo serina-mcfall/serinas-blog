@@ -15,10 +15,123 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
   </section>
   <section
     aria-label="This Week"
-  />
+  >
+    <div
+      aria-label="Today's mood"
+    >
+      <span
+        aria-hidden="true"
+      >
+        🌸
+      </span>
+      <span>
+        calm
+      </span>
+    </div>
+    <figure
+      aria-label="Quote of the week"
+    >
+      <blockquote>
+        <p>
+          Boundaries · Reliability · Accountability · Vault · Integrity · Non-judgment · Generosity.
+        </p>
+        
+
+        <p>
+          — BRAVING
+        </p>
+      </blockquote>
+      <figcaption>
+        — 
+        Brené Brown
+        <span>
+          , 
+          Dare to Lead
+        </span>
+      </figcaption>
+    </figure>
+    <div
+      aria-label="Currently listening"
+    >
+      <span>
+        Listening: 
+      </span>
+      <a
+        href="https://open.spotify.com/playlist/replace-with-real-url"
+        rel="noopener noreferrer"
+      >
+        Cherry Blossom Lo-Fi
+      </a>
+      <span>
+         · 
+        Various
+      </span>
+    </div>
+  </section>
   <section
     aria-label="Featured this week"
-  />
+  >
+    <article
+      aria-label="Featured art"
+    >
+      <h2>
+        Moonlight pour
+      </h2>
+      <img
+        alt="A resin piece with swirling teal and pearlescent white"
+        src="/images/featured/moonlight-pour.jpg"
+      />
+      <p>
+        Six pours to settle the swirl.
+      </p>
+      <a
+        data-discover="true"
+        href="/art/hello-from-this-room"
+      >
+        View more →
+      </a>
+    </article>
+    <article
+      aria-label="Featured writing"
+    >
+      <h2>
+        From a story in progress
+      </h2>
+      <img
+        alt="An open notebook on a wooden desk"
+        src="/images/featured/writing-snippet.jpg"
+      />
+      <p>
+        The first line of something larger.
+      </p>
+      <a
+        data-discover="true"
+        href="/writing/hello-from-this-room"
+      >
+        View more →
+      </a>
+    </article>
+    <article
+      aria-label="Featured travel"
+    >
+      <h2>
+        Wellington harbour at dawn
+      </h2>
+      <img
+        alt="Calm water reflecting pink-violet sky"
+        src="/images/featured/wellington-dawn.jpg"
+      />
+      <p>
+        I forgot how quiet the city is at five am.
+      </p>
+      <a
+        data-discover="true"
+        href="/travel/hello-from-this-room"
+      >
+        View more →
+      </a>
+    </article>
+  </section>
   <nav
     aria-label="Rooms"
   >

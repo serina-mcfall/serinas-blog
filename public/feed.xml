@@ -5,6 +5,40 @@
     <link>https://serinas-blog.vercel.app</link>
     <description>Art, writing, code, travel, and notes from a neurodivergent brain.</description>
     <language>en</language>
-
+    <item>
+      <title>Hello from the writing room</title>
+      <link>https://serinas-blog.vercel.app/writing/hello-from-this-room</link>
+      <guid isPermaLink="true">https://serinas-blog.vercel.app/writing/hello-from-this-room</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>A first post — placeholder until I drop a real story-snippet in here.</description>
+    </item>
+    <item>
+      <title>Hello from the art room</title>
+      <link>https://serinas-blog.vercel.app/art/hello-from-this-room</link>
+      <guid isPermaLink="true">https://serinas-blog.vercel.app/art/hello-from-this-room</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>A first post — placeholder until I share a real piece.</description>
+    </item>
+    <item>
+      <title>Hello from the code room</title>
+      <link>https://serinas-blog.vercel.app/code/hello-from-this-room</link>
+      <guid isPermaLink="true">https://serinas-blog.vercel.app/code/hello-from-this-room</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>A first post — placeholder until I write up something I actually learned.</description>
+    </item>
+    <item>
+      <title>Hello from the travel &amp; food room</title>
+      <link>https://serinas-blog.vercel.app/travel/hello-from-this-room</link>
+      <guid isPermaLink="true">https://serinas-blog.vercel.app/travel/hello-from-this-room</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>A first post — placeholder until I share a real place or a real plate.</description>
+    </item>
+    <item>
+      <title>Hello from the neurodivergent room</title>
+      <link>https://serinas-blog.vercel.app/neurodivergent/hello-from-this-room</link>
+      <guid isPermaLink="true">https://serinas-blog.vercel.app/neurodivergent/hello-from-this-room</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>A first post — placeholder until I write something honest about a real day.</description>
+    </item>
   </channel>
 </rss>
