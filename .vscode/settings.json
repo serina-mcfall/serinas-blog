@@ -1,0 +1,10 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, .gitignore, .nvmrc, .node-version",
+    "tsconfig.json": "tsconfig.*.json",
+    "vite.config.ts": "vercel.json, vite.config.*.ts",
+    "README.md": "LICENSE, CHANGELOG.md, CONTRIBUTING.md"
+  }
+}
