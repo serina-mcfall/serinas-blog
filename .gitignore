@@ -25,6 +25,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# TypeScript build cache
+*.tsbuildinfo
+
 # Vite cache
 .vite
 
