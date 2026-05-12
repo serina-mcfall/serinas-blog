@@ -12,6 +12,6 @@ describe('Home', () => {
       </MemoryRouter>,
     )
     expect(container).toMatchSnapshot()
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

@@ -18,6 +18,6 @@ describe('Hello', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(<Hello />)
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

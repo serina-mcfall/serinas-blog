@@ -54,6 +54,6 @@ describe('Room', () => {
 
   it('has no a11y violations', async () => {
     const { container } = renderRoom('/writing')
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

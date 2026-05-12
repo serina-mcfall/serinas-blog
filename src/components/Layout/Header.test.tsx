@@ -33,6 +33,6 @@ describe('Header', () => {
 
   it('has no a11y violations', async () => {
     const { container } = renderHeader()
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

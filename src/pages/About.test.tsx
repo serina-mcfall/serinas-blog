@@ -22,6 +22,6 @@ describe('About', () => {
         <About />
       </MemoryRouter>,
     )
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

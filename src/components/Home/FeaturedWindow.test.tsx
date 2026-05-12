@@ -45,6 +45,6 @@ describe('FeaturedWindow', () => {
     const { container } = renderWithRouter(
       <FeaturedWindow kind="art" item={item} />,
     )
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })

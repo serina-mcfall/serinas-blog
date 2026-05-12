@@ -44,6 +44,6 @@ describe('ThisWeek', () => {
     const { container } = render(
       <ThisWeek mood={mood} quote={quote} listening={listening} />,
     )
-    expect(await axe(container)).toHaveNoViolations()
+    expect((await axe(container)).violations).toEqual([])
   })
 })
