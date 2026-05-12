@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { parsePost, sortAndFilter } from './content'
+import {
+  parsePost,
+  sortAndFilter,
+  parseMood,
+  parseQuote,
+  parseListening,
+} from './content'
 import type { Post } from './types'
 
 describe('parsePost', () => {
@@ -81,5 +87,69 @@ describe('sortAndFilter', () => {
   it('excludes drafts', () => {
     const result = sortAndFilter(posts)
     expect(result.find(p => p.slug === 'c')).toBeUndefined()
+  })
+})
+
+describe('parseMood', () => {
+  it('parses mood file', () => {
+    const raw = `---
+emoji: "🌸"
+word: "calm"
+updated: 2026-05-12
+---
+`
+    expect(parseMood(raw)).toEqual({
+      emoji: '🌸',
+      word: 'calm',
+      updated: '2026-05-12',
+    })
+  })
+})
+
+describe('parseQuote', () => {
+  it('parses quote with body', () => {
+    const raw = `---
+author: "Brené Brown"
+source: "Dare to Lead"
+updated: 2026-05-12
+---
+
+BRAVING.`
+    const result = parseQuote(raw)
+    expect(result.author).toBe('Brené Brown')
+    expect(result.source).toBe('Dare to Lead')
+    expect(result.body).toBe('\nBRAVING.')
+    expect(result.updated).toBe('2026-05-12')
+  })
+
+  it('treats missing source as undefined', () => {
+    const raw = `---
+author: "Anon"
+updated: 2026-05-12
+---
+
+A quote.`
+    const result = parseQuote(raw)
+    expect(result.source).toBeUndefined()
+  })
+})
+
+describe('parseListening', () => {
+  it('parses listening file', () => {
+    const raw = `---
+title: "Cherry Blossom Lo-Fi"
+artist: "Various"
+url: "https://open.spotify.com/playlist/xyz"
+type: "playlist"
+updated: 2026-05-12
+---
+`
+    expect(parseListening(raw)).toEqual({
+      title: 'Cherry Blossom Lo-Fi',
+      artist: 'Various',
+      url: 'https://open.spotify.com/playlist/xyz',
+      type: 'playlist',
+      updated: '2026-05-12',
+    })
   })
 })

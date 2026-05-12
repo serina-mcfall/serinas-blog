@@ -60,6 +60,70 @@ export function getPost(room: Room, slug: string): Post | undefined {
   return getAllPosts().find(p => p.room === room && p.slug === slug)
 }
 
+export function parseMood(raw: string): Mood {
+  const { data } = matter(raw)
+  return {
+    emoji: String(data.emoji ?? ''),
+    word: String(data.word ?? ''),
+    updated: normaliseDate(data.updated),
+  }
+}
+
+export function parseQuote(raw: string): Quote {
+  const { data, content } = matter(raw)
+  return {
+    author: String(data.author ?? ''),
+    source: typeof data.source === 'string' ? data.source : undefined,
+    body: content,
+    updated: normaliseDate(data.updated),
+  }
+}
+
+export function parseListening(raw: string): ListeningItem {
+  const { data } = matter(raw)
+  const type = data.type === 'song' || data.type === 'album' ? data.type : 'playlist'
+  return {
+    title: String(data.title ?? ''),
+    artist: String(data.artist ?? ''),
+    url: String(data.url ?? ''),
+    type,
+    updated: normaliseDate(data.updated),
+  }
+}
+
+const moodRaw = import.meta.glob('/content/now/mood.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>
+
+const quoteRaw = import.meta.glob('/content/now/quote.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>
+
+const listeningRaw = import.meta.glob('/content/now/listening.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>
+
+export function getMood(): Mood | null {
+  const raw = Object.values(moodRaw)[0]
+  return raw ? parseMood(raw) : null
+}
+
+export function getQuote(): Quote | null {
+  const raw = Object.values(quoteRaw)[0]
+  return raw ? parseQuote(raw) : null
+}
+
+export function getListening(): ListeningItem | null {
+  const raw = Object.values(listeningRaw)[0]
+  return raw ? parseListening(raw) : null
+}
+
 function firstParagraph(body: string): string {
   const trimmed = body.trim()
   const firstBreak = trimmed.indexOf('\n\n')
