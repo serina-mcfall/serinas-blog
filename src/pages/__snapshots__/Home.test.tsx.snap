@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home > renders without crashing and has no a11y violations 1`] = `
+<div>
+  <section>
+    <h1>
+      Hi, I'm Serina
+    </h1>
+    <p>
+      An this is where I will share what I'm making - art, writing. code I'm Learning, and notes from a neurodivergent brain.
+    </p>
+    <p>
+      Please join me on this Journey of Self Discovery
+    </p>
+  </section>
+  <section
+    aria-label="This Week"
+  />
+  <section
+    aria-label="Featured this week"
+  />
+  <nav
+    aria-label="Rooms"
+  >
+    <h2>
+      Wander into a room!
+    </h2>
+    <ul>
+      <li>
+        <a
+          data-discover="true"
+          href="/writing"
+        >
+          Writing
+        </a>
+      </li>
+      <li>
+        <a
+          data-discover="true"
+          href="/art"
+        >
+          Art
+        </a>
+      </li>
+      <li>
+        <a
+          data-discover="true"
+          href="/code"
+        >
+          Code
+        </a>
+      </li>
+      <li>
+        <a
+          data-discover="true"
+          href="/travel"
+        >
+          Travel & Food
+        </a>
+      </li>
+      <li>
+        <a
+          data-discover="true"
+          href="/neurodivergent"
+        >
+          Neurodivergent
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
