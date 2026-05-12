@@ -124,6 +124,32 @@ export function getListening(): ListeningItem | null {
   return raw ? parseListening(raw) : null
 }
 
+export function parseFeatured(raw: string): FeaturedItem {
+  const { data } = matter(raw)
+  return {
+    title: String(data.title ?? ''),
+    image: String(data.image ?? ''),
+    imageAlt: String(data.imageAlt ?? ''),
+    link: typeof data.link === 'string' ? data.link : undefined,
+    caption: String(data.caption ?? ''),
+    updated: normaliseDate(data.updated),
+  }
+}
+
+const featuredRaw = import.meta.glob('/content/featured/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>
+
+type FeaturedKind = 'art' | 'writing' | 'travel'
+
+export function getFeatured(kind: FeaturedKind): FeaturedItem | null {
+  const path = `/content/featured/${kind}.md`
+  const raw = featuredRaw[path]
+  return raw ? parseFeatured(raw) : null
+}
+
 function firstParagraph(body: string): string {
   const trimmed = body.trim()
   const firstBreak = trimmed.indexOf('\n\n')

@@ -5,6 +5,7 @@ import {
   parseMood,
   parseQuote,
   parseListening,
+  parseFeatured,
 } from './content'
 import type { Post } from './types'
 
@@ -151,5 +152,39 @@ updated: 2026-05-12
       type: 'playlist',
       updated: '2026-05-12',
     })
+  })
+})
+
+describe('parseFeatured', () => {
+  it('parses featured-item file', () => {
+    const raw = `---
+title: "Moonlight pour"
+image: "/images/featured/moonlight-pour.jpg"
+imageAlt: "A resin piece with swirling teal"
+link: "/art/moonlight-pour"
+caption: "Six pours to settle the swirl"
+updated: 2026-05-12
+---
+`
+    expect(parseFeatured(raw)).toEqual({
+      title: 'Moonlight pour',
+      image: '/images/featured/moonlight-pour.jpg',
+      imageAlt: 'A resin piece with swirling teal',
+      link: '/art/moonlight-pour',
+      caption: 'Six pours to settle the swirl',
+      updated: '2026-05-12',
+    })
+  })
+
+  it('treats missing link as undefined', () => {
+    const raw = `---
+title: "No link"
+image: "/x.jpg"
+imageAlt: "x"
+caption: "x"
+updated: 2026-05-12
+---
+`
+    expect(parseFeatured(raw).link).toBeUndefined()
   })
 })
