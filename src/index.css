@@ -1,8 +1,111 @@
-:root {
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@import './styles/tokens.css';
+
+/* === Reset & base === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
 }
 
 body {
   margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--size-step-0);
+  line-height: var(--line-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* === Layout === */
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-2);
+}
+
+/* === Headings === */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: var(--line-display);
+  margin-block: var(--space-3) var(--space-2);
+}
+
+h1 {
+  font-size: var(--size-step-4);
+}
+h2 {
+  font-size: var(--size-step-3);
+}
+h3 {
+  font-size: var(--size-step-2);
+}
+
+/* === Links === */
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-link-hover);
+  outline-offset: 3px;
+  color: var(--color-link-hover);
+}
+
+/* === Images === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Header (the global site nav) === */
+header:first-of-type {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* === Footer === */
+footer {
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-2);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* === Blockquote (for QuoteOfTheWeek) === */
+blockquote {
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  font-style: italic;
+}
+
+/* === Time elements (dates on posts) === */
+time {
+  color: var(--color-text-muted);
+  font-size: var(--size-step-0);
 }

@@ -1,0 +1,63 @@
+/* Design tokens for Serina's Blog.
+   Change values here; the rest of the CSS picks them up automatically. */
+
+:root {
+  /* === Colour — calm, muted, non-oppressive === */
+  /* Misty-morning palette: warm paper-cream with dusty pink + ink browns */
+
+  /* Backgrounds */
+  --color-bg: #ebe3d2;             /* aged silk / soft tan paper */
+  --color-bg-elevated: #ddd2bc;    /* deeper aged paper */
+
+  /* Text */
+  --color-text: #2a1f15;           /* warm sumi ink — deep brown-black */
+  --color-text-muted: #6b5840;     /* faded ink — for dates, captions */
+
+  /* Accents */
+  --color-accent: #c08591;         /* dusty pink */
+  --color-accent-strong: #a06870;  /* deeper pink for hovers/active states */
+
+  /* Links */
+  --color-link: #8b4a5e;           /* dusky pink — deep enough for AA contrast */
+  --color-link-hover: #6e3a4a;     /* deeper rose on hover */
+
+  /* Borders */
+  --color-border: #d6cbb5;
+
+  /* === Typography — dyslexia-aware defaults === */
+  --font-body: 'Atkinson Hyperlegible', 'Inter', system-ui, sans-serif;
+  --font-display: 'Atkinson Hyperlegible', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Type scale (relative to 1rem ≈ 16px) */
+  --size-step-0: 1rem;             /* body */
+  --size-step-1: 1.25rem;          /* small heading / lead-in */
+  --size-step-2: 1.6rem;           /* h3 */
+  --size-step-3: 2rem;             /* h2 */
+  --size-step-4: 2.6rem;           /* h1 */
+
+  /* Line heights — body MUST be ≥ 1.6 for dyslexia comfort */
+  --line-body: 1.65;
+  --line-display: 1.2;
+
+  /* === Spacing === */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+
+  /* === Layout === */
+  --measure: 66ch;                 /* max content width — comfortable line length */
+}
+
+/* Respect the reader's motion preferences (Declaration: Accessibility #4) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
