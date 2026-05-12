@@ -13,7 +13,6 @@
       "destination": "/images/placeholder.svg"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/(.*)",
