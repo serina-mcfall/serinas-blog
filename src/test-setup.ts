@@ -32,3 +32,14 @@ if (typeof window !== 'undefined' && !window.IntersectionObserver) {
   }
   window.IntersectionObserver = MockIntersectionObserver
 }
+
+// jsdom doesn't implement ResizeObserver. Radix UI's positioning (floating-ui)
+// relies on it, so provide a no-op stub.
+if (typeof window !== 'undefined' && !window.ResizeObserver) {
+  class MockResizeObserver implements ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+  window.ResizeObserver = MockResizeObserver
+}

@@ -1,0 +1,92 @@
+/* Lamp Tooltip (21st.dev), adapted from its dark-mode white glow into a warm
+   "lantern" glow in Serina's palette. The original shipped as a Tailwind v3 config
+   (boxShadow tokens) + tailwindcss-animate classes; both are re-expressed here as
+   plain CSS so they work in the v4 / no-config setup. */
+
+.lamp-tooltip {
+  --lamp-glow: rgba(224, 178, 122, 0.55); /* soft lantern gold */
+
+  z-index: 50;
+  overflow: hidden;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius, 0.5rem);
+  border: 0 solid rgba(235, 227, 210, 0.35); /* faint cream edge */
+  background: #241a12; /* deep night ink */
+  color: var(--color-bg); /* cream text */
+  font-size: 0.875rem;
+  line-height: 1.4;
+
+  /* Gentle entrance — user-triggered, brief. */
+  animation: lamp-tooltip-in 160ms ease-out;
+}
+
+.lamp-tooltip p {
+  margin: 0;
+}
+
+/* Border on the side facing the trigger + glow spilling toward it, per data-side. */
+.lamp-tooltip[data-side='top'] {
+  border-bottom-width: 1px;
+  box-shadow: 0 20px 32px -14px var(--lamp-glow);
+}
+.lamp-tooltip[data-side='bottom'] {
+  border-top-width: 1px;
+  box-shadow: 0 -20px 32px -14px var(--lamp-glow);
+}
+.lamp-tooltip[data-side='right'] {
+  border-left-width: 1px;
+  box-shadow: -16px 0 28px -14px var(--lamp-glow);
+}
+.lamp-tooltip[data-side='left'] {
+  border-right-width: 1px;
+  box-shadow: 16px 0 28px -14px var(--lamp-glow);
+}
+
+@keyframes lamp-tooltip-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Honour reduced-motion: appear instantly, no scale/fade. */
+@media (prefers-reduced-motion: reduce) {
+  .lamp-tooltip {
+    animation: none;
+  }
+}
+
+/* === The dark "night" stage the demo sits on, so the warm glow reads === */
+.lamp-tooltip-stage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 3rem;
+  border-radius: var(--radius, 0.5rem);
+  background: #1c140d;
+}
+
+.lamp-trigger {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid rgba(235, 227, 210, 0.25);
+  border-radius: var(--radius, 0.5rem);
+  background: transparent;
+  color: var(--color-bg);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.lamp-trigger:hover {
+  border-color: rgba(235, 227, 210, 0.5);
+}
+
+.lamp-trigger:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

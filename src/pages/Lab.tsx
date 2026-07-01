@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import SpotlightBackgroundDemo from '@/components/ui/spotlight-background.demo'
+import LampTooltipDemo from '@/components/ui/lamp-tooltip.demo'
 
 export default function Lab() {
   return (
@@ -30,6 +31,12 @@ export default function Lab() {
           Spotlight Background (21st.dev)
         </h2>
         <SpotlightBackgroundDemo />
+      </section>
+
+      {/* 21st.dev — Lamp Tooltip (Radix) */}
+      <section className="mt-12">
+        <h2 className="mb-4 text-muted-foreground">Lamp Tooltip (21st.dev)</h2>
+        <LampTooltipDemo />
       </section>
     </div>
   )

@@ -12,6 +12,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-tooltip": "^1.2.11",
     "@tailwindcss/vite": "^4.3.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
