@@ -1,0 +1,107 @@
+/* Styles for the Spotlight Background (21st.dev).
+   The original prompt shipped WITHOUT any CSS, so this stylesheet is authored to
+   match Serina's misty-morning palette: soft, low-opacity, heavily blurred glows
+   rather than harsh spotlights. */
+
+.spotlight-container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  overflow: hidden;
+  border-radius: var(--radius, 0.5rem);
+  background: var(--color-bg);
+  isolation: isolate;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.spotlight-left {
+  background: radial-gradient(circle at center, var(--color-accent) 0%, transparent 60%);
+}
+
+.spotlight-mid {
+  top: 20%;
+  left: 30%;
+  /* A soft moonlit teal — a nod to the Where Petals Fall palette. */
+  background: radial-gradient(circle at center, #9ab8b0 0%, transparent 60%);
+}
+
+.spotlight-right {
+  top: 60%;
+  left: 65%;
+  background: radial-gradient(circle at center, var(--color-accent-strong) 0%, transparent 60%);
+}
+
+.spotlight-content {
+  position: relative;
+  z-index: 1;
+  max-width: 40ch;
+  padding: var(--space-4, 2.5rem);
+  text-align: center;
+}
+
+.spotlight-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 1rem);
+}
+
+.spotlight-title {
+  margin: 0;
+  font-size: var(--size-step-4, 2.6rem);
+}
+
+.spotlight-description {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--color-text-muted);
+}
+
+.spotlight-button {
+  margin-top: var(--space-2, 1rem);
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: var(--radius, 0.5rem);
+  background: var(--color-accent-strong);
+  color: var(--color-bg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.spotlight-button:hover {
+  background: var(--color-link-hover);
+}
+
+.spotlight-button:focus-visible {
+  outline: 2px solid var(--color-link-hover);
+  outline-offset: 3px;
+}
+
+/* Belt-and-braces: the JS already disables motion via useReducedMotion, but stop
+   any residual CSS animation too when the reader prefers reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight {
+    animation: none;
+  }
+}
