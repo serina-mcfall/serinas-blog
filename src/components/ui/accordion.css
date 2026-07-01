@@ -1,0 +1,31 @@
+/* Accordion open/close height animation. The original shipped as Tailwind v3
+   config keyframes (animate-accordion-down/up); re-expressed here as plain CSS so
+   it works in the v4 / no-config setup. Radix sets --radix-accordion-content-height.
+   Note: the global prefers-reduced-motion block in tokens.css already neutralises
+   this animation for readers who ask for stillness. */
+
+.accordion-content[data-state='open'] {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.accordion-content[data-state='closed'] {
+  animation: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

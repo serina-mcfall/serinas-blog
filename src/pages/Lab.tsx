@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils'
 import SpotlightBackgroundDemo from '@/components/ui/spotlight-background.demo'
 import LampTooltipDemo from '@/components/ui/lamp-tooltip.demo'
+import Faq3Demo from '@/components/ui/faq3.demo'
+import LimelightNavDemo from '@/components/ui/limelight-nav.demo'
 
 export default function Lab() {
   return (
@@ -37,6 +39,18 @@ export default function Lab() {
       <section className="mt-12">
         <h2 className="mb-4 text-muted-foreground">Lamp Tooltip (21st.dev)</h2>
         <LampTooltipDemo />
+      </section>
+
+      {/* 21st.dev — FAQ (Radix Accordion) */}
+      <section className="mt-12">
+        <h2 className="mb-4 text-muted-foreground">FAQ / Accordion (21st.dev)</h2>
+        <Faq3Demo />
+      </section>
+
+      {/* 21st.dev — Limelight Nav */}
+      <section className="mt-12">
+        <h2 className="mb-4 text-muted-foreground">Limelight Nav (21st.dev)</h2>
+        <LimelightNavDemo />
       </section>
     </div>
   )
