@@ -1,18 +1,24 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite' // ← NEW
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import { fileURLToPath } from 'node:url' // ← NEW
 
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(), // ← NEW
     nodePolyfills({
-      // gray-matter (used to parse markdown front-matter in the browser) depends on
-      // Node's Buffer global. Polyfill Buffer (and other Node globals) for the
-      // browser bundle so gray-matter works at runtime.
       globals: { Buffer: true, global: true, process: true },
     }),
   ],
+  resolve: {
+    // ← NEW (whole block)
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,

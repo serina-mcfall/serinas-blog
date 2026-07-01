@@ -5,10 +5,13 @@ import Room from './pages/Room'
 import Post from './pages/Post'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+import Lab from './pages/Lab' // ← NEW
 
 function App() {
   return (
     <Routes>
+      {import.meta.env.DEV && <Route path="/lab" element={<Lab />} />}{' '}
+      {/* ← NEW */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

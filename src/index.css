@@ -1,5 +1,56 @@
+/* Cascade layer order declared up front. Tailwind's layers sit BELOW your
+   hand-written base styles (which stay unlayered), so the live site is untouched. */
+@layer theme, base, components, utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 @import './styles/tokens.css';
+
+/* Tailwind v4 — theme + utilities only. Preflight (the global reset) is deliberately
+   left out so nothing on the live pages gets restyled. */
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* === 21st.dev / shadcn palette bridge ===
+   Left column = names components expect. Right column = your existing tokens. */
+:root {
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --card: var(--color-bg-elevated);
+  --card-foreground: var(--color-text);
+  --primary: var(--color-accent-strong);
+  --primary-foreground: var(--color-bg);
+  --secondary: var(--color-bg-elevated);
+  --secondary-foreground: var(--color-text);
+  --muted: var(--color-bg-elevated);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-text);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-link);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
 
 /* === Reset & base === */
 *,
