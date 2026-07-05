@@ -17,55 +17,59 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
     aria-label="This Week"
   >
     <div
-      aria-label="Today's mood"
+      class="glass-card p-6"
     >
-      <span
-        aria-hidden="true"
+      <div
+        aria-label="Today's mood"
       >
-        🌸
-      </span>
-      <span>
-        calm
-      </span>
-    </div>
-    <figure
-      aria-label="Quote of the week"
-    >
-      <blockquote>
-        <p>
-          Boundaries · Reliability · Accountability · Vault · Integrity · Non-judgment · Generosity.
-        </p>
-        
-
-        <p>
-          — BRAVING
-        </p>
-      </blockquote>
-      <figcaption>
-        — 
-        Brené Brown
-        <span>
-          , 
-          Dare to Lead
+        <span
+          aria-hidden="true"
+        >
+          🌸
         </span>
-      </figcaption>
-    </figure>
-    <div
-      aria-label="Currently listening"
-    >
-      <span>
-        Listening: 
-      </span>
-      <a
-        href="https://open.spotify.com/playlist/replace-with-real-url"
-        rel="noopener noreferrer"
+        <span>
+          calm
+        </span>
+      </div>
+      <figure
+        aria-label="Quote of the week"
       >
-        Cherry Blossom Lo-Fi
-      </a>
-      <span>
-         · 
-        Various
-      </span>
+        <blockquote>
+          <p>
+            Boundaries · Reliability · Accountability · Vault · Integrity · Non-judgment · Generosity.
+          </p>
+          
+
+          <p>
+            — BRAVING
+          </p>
+        </blockquote>
+        <figcaption>
+          — 
+          Brené Brown
+          <span>
+            , 
+            Dare to Lead
+          </span>
+        </figcaption>
+      </figure>
+      <div
+        aria-label="Currently listening"
+      >
+        <span>
+          Listening: 
+        </span>
+        <a
+          href="https://open.spotify.com/playlist/replace-with-real-url"
+          rel="noopener noreferrer"
+        >
+          Cherry Blossom Lo-Fi
+        </a>
+        <span>
+           · 
+          Various
+        </span>
+      </div>
     </div>
   </section>
   <section

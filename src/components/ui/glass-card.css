@@ -1,0 +1,33 @@
+/* Frosted-glass card, retinted from the original dark glass into a warm, misty
+   cream. Kept opaque enough (60% white) that dark ink text stays high-contrast
+   and legible — the opposite of the original's low-contrast white-on-glass. */
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(235, 227, 210, 0.42)
+  );
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 40px -24px rgba(42, 31, 21, 0.55);
+  color: var(--color-text);
+}
+
+/* A soft, STATIC gradient stage so the frosting has colour to blur over.
+   No animation — the glass reads without anything moving. */
+.glass-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 24rem;
+  padding: 3rem 1.5rem;
+  border-radius: var(--radius, 0.5rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 28%, var(--color-accent), transparent 42%),
+    radial-gradient(circle at 78% 72%, #9ab8b0, transparent 42%),
+    linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg));
+}

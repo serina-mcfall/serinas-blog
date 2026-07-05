@@ -40,6 +40,15 @@ describe('ThisWeek', () => {
     ).toHaveAttribute('href', listening.url)
   })
 
+  it('wraps the week content in the frosted glass panel', () => {
+    const { container } = render(
+      <ThisWeek mood={mood} quote={quote} listening={listening} />,
+    )
+    const panel = container.querySelector('.glass-card')
+    expect(panel).not.toBeNull()
+    expect(panel).toHaveTextContent('calm')
+  })
+
   it('has no a11y violations', async () => {
     const { container } = render(
       <ThisWeek mood={mood} quote={quote} listening={listening} />,
