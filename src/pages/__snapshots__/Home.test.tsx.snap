@@ -132,54 +132,147 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
       </a>
     </article>
   </section>
-  <nav
-    aria-label="Rooms"
+  <section
+    class="mx-auto max-w-5xl px-4"
   >
-    <h2>
-      Wander into a room!
-    </h2>
-    <ul>
+    <div
+      class="mb-8 flex flex-col gap-2"
+    >
+      <h2
+        class="font-semibold"
+      >
+        The Rooms
+      </h2>
+      <p
+        class="max-w-lg text-muted-foreground"
+      >
+        Five spaces to wander - pick whichever calls to you.
+      </p>
+    </div>
+    <ul
+      class="m-0 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3"
+    >
       <li>
         <a
+          class="room-tile room-tile--featured"
           data-discover="true"
           href="/writing"
         >
-          Writing
+          <span
+            class="room-tile__ord"
+          >
+            ROOM · 
+            01
+          </span>
+          <h3
+            class="room-tile__title"
+          >
+            Writing
+          </h3>
+          <p
+            class="room-tile__blurb"
+          >
+            Stories, Half-finished and finished.
+          </p>
         </a>
       </li>
       <li>
         <a
+          class="room-tile"
           data-discover="true"
           href="/art"
         >
-          Art
+          <span
+            class="room-tile__ord"
+          >
+            ROOM · 
+            02
+          </span>
+          <h3
+            class="room-tile__title"
+          >
+            Art
+          </h3>
+          <p
+            class="room-tile__blurb"
+          >
+            Resin, ink and other creative endevours.
+          </p>
         </a>
       </li>
       <li>
         <a
+          class="room-tile"
           data-discover="true"
           href="/code"
         >
-          Code
+          <span
+            class="room-tile__ord"
+          >
+            ROOM · 
+            03
+          </span>
+          <h3
+            class="room-tile__title"
+          >
+            Code
+          </h3>
+          <p
+            class="room-tile__blurb"
+          >
+            Code, scripts and other digital curiosities that drive my mind and my work.
+          </p>
         </a>
       </li>
       <li>
         <a
+          class="room-tile"
           data-discover="true"
           href="/travel"
         >
-          Travel & Food
+          <span
+            class="room-tile__ord"
+          >
+            ROOM · 
+            04
+          </span>
+          <h3
+            class="room-tile__title"
+          >
+            Travel & Food
+          </h3>
+          <p
+            class="room-tile__blurb"
+          >
+            Journeys, experiences and the stories that come with them.
+          </p>
         </a>
       </li>
       <li>
         <a
+          class="room-tile"
           data-discover="true"
           href="/neurodivergent"
         >
-          Neurodivergent
+          <span
+            class="room-tile__ord"
+          >
+            ROOM · 
+            05
+          </span>
+          <h3
+            class="room-tile__title"
+          >
+            Neurodivergent
+          </h3>
+          <p
+            class="room-tile__blurb"
+          >
+            Thoughts, experiences and perspectives unique to the neurodivergent mind of a software developer.
+          </p>
         </a>
       </li>
     </ul>
-  </nav>
+  </section>
 </div>
 `;

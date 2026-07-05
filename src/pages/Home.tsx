@@ -1,7 +1,7 @@
 import Hello from '../components/Home/Hello'
 import ThisWeek from '../components/Home/ThisWeek'
 import FeaturedWindow from '../components/Home/FeaturedWindow'
-import RoomList from '../components/Home/RoomList'
+import RoomGallerySection from '../components/Home/RoomGallerySection'
 import { getMood, getQuote, getListening, getFeatured } from '../lib/content'
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
         <FeaturedWindow kind="writing" item={featuredWriting} />
         <FeaturedWindow kind="travel" item={featuredTravel} />
       </section>
-      <RoomList />
+      <RoomGallerySection />
     </>
   )
 }

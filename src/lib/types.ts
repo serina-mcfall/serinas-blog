@@ -1,6 +1,12 @@
 export type Room = 'writing' | 'art' | 'code' | 'travel' | 'neurodivergent'
 
-export const ROOMS: Room[] = ['writing', 'art', 'code', 'travel', 'neurodivergent']
+export const ROOMS: Room[] = [
+  'writing',
+  'art',
+  'code',
+  'travel',
+  'neurodivergent',
+]
 
 export const ROOM_DISPLAY_NAMES: Record<Room, string> = {
   writing: 'Writing',
@@ -50,4 +56,34 @@ export interface FeaturedItem {
   link?: string
   caption: string
   updated: string
+}
+
+export interface RoomMeta {
+  description: string
+  cta: string
+}
+
+export const ROOM_META: Record<Room, RoomMeta> = {
+  writing: {
+    description: 'Stories, Half-finished and finished.',
+    cta: 'Wander into the world of words.',
+  },
+  art: {
+    description: 'Resin, ink and other creative endevours.',
+    cta: 'Wonder into the world of colour and form.',
+  },
+  code: {
+    description:
+      'Code, scripts and other digital curiosities that drive my mind and my work.',
+    cta: 'Wonder into the world of code and logic where a nurodivergent mind thrives.',
+  },
+  travel: {
+    description: 'Journeys, experiences and the stories that come with them.',
+    cta: 'Explore the world through my eyes.',
+  },
+  neurodivergent: {
+    description:
+      'Thoughts, experiences and perspectives unique to the neurodivergent mind of a software developer.',
+    cta: 'Discover the world through a neurodivergent lens.',
+  },
 }
