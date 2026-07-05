@@ -16,6 +16,20 @@ describe('About', () => {
     expect(screen.getByRole('heading', { name: /Reaching me/ })).toBeInTheDocument()
   })
 
+  it('renders the FAQ section with its questions', () => {
+    render(
+      <MemoryRouter>
+        <About />
+      </MemoryRouter>,
+    )
+    expect(
+      screen.getByRole('heading', { name: /A few questions/ }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /Can I use one of your pieces/ }),
+    ).toBeInTheDocument()
+  })
+
   it('has no a11y violations', async () => {
     const { container } = render(
       <MemoryRouter>
