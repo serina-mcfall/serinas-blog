@@ -3,6 +3,8 @@ import SpotlightBackgroundDemo from '@/components/ui/spotlight-background.demo'
 import LampTooltipDemo from '@/components/ui/lamp-tooltip.demo'
 import Faq3Demo from '@/components/ui/faq3.demo'
 import LimelightNavDemo from '@/components/ui/limelight-nav.demo'
+import RoomGalleryDemo from '@/components/ui/room-gallery.demo'
+import GlassCardDemo from '@/components/ui/glass-card.demo'
 
 export default function Lab() {
   return (
@@ -51,6 +53,18 @@ export default function Lab() {
       <section className="mt-12">
         <h2 className="mb-4 text-muted-foreground">Limelight Nav (21st.dev)</h2>
         <LimelightNavDemo />
+      </section>
+
+      {/* Room gallery — grid reimagining of the 21st.dev carousel */}
+      <section className="mt-12">
+        <h2 className="mb-4 text-muted-foreground">Room Gallery (grid)</h2>
+        <RoomGalleryDemo />
+      </section>
+
+      {/* Glass card — the glassmorphism look, retinted + given a real job */}
+      <section className="mt-12">
+        <h2 className="mb-4 text-muted-foreground">Glass Card (frosted “this week”)</h2>
+        <GlassCardDemo />
       </section>
     </div>
   )
