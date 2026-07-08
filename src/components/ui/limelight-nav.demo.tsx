@@ -1,16 +1,17 @@
-import { Home, Feather, Palette, Code2, Plane, Sparkles } from 'lucide-react'
 import { LimelightNav, type NavItem } from './limelight-nav'
 
-// Filled with Serina's actual rooms, so this reads as a real site nav.
+// The reworked, route-aware nav filled with Serina's real rooms. A distinct
+// aria-label so it doesn't clash with the site header's "Primary" landmark on
+// the /lab page.
 const items: NavItem[] = [
-  { id: 'home', icon: <Home />, label: 'Home' },
-  { id: 'writing', icon: <Feather />, label: 'Writing' },
-  { id: 'art', icon: <Palette />, label: 'Art' },
-  { id: 'code', icon: <Code2 />, label: 'Code' },
-  { id: 'travel', icon: <Plane />, label: 'Travel & Food' },
-  { id: 'neurodivergent', icon: <Sparkles />, label: 'Neurodivergent' },
+  { to: '/', label: 'Home' },
+  { to: '/writing', label: 'Writing' },
+  { to: '/art', label: 'Art' },
+  { to: '/code', label: 'Code' },
+  { to: '/travel', label: 'Travel & Food' },
+  { to: '/neurodivergent', label: 'Neurodivergent' },
 ]
 
 export default function LimelightNavDemo() {
-  return <LimelightNav items={items} />
+  return <LimelightNav items={items} ariaLabel="Lab demo nav" />
 }
