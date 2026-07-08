@@ -32,7 +32,7 @@ This is what Serina's Blog must let him do. The declarations below are the testa
 
 1. A reader landing on the home page knows what the site is and where the main rooms are within the first phone-screen, without scrolling, without parsing decoration.
 2. Every post and page reads comfortably one-handed on a phone — strong contrast, comfortable line length, tap targets large enough not to fumble.
-3. Nothing on the site moves on its own. No auto-playing video, no fading banners, no rotating carousels, no scroll-jacking. *The page breathes.*
+3. Nothing on the site moves on its own, with one deliberate exception: a single, slow, low-contrast ambient glow may drift behind the home-page masthead. It is decorative, hidden from assistive tech, honours reduced-motion (going still when motion is turned down), never flashes, and is the only self-starting motion anywhere on the site. Beyond it: no auto-playing video, no fading banners, no rotating carousels, no scroll-jacking. *The page still breathes.*
 4. The site honours the reader's reduced-motion setting — when their phone has motion turned down, decorative transitions go quiet.
 5. Typography respects dyslexia-aware defaults — clear sans-serif body, line height of 1.6 or more, no italic body text, no full justification.
 6. No information is carried by colour alone, and meaningful colour pairings are checked against common forms of colour-blindness (protanopia, deuteranopia, tritanopia).
@@ -97,7 +97,7 @@ This is what Serina's Blog must let him do. The declarations below are the testa
 ## What We Won't Accept
 
 1. Popups, modals, overlays, or content walls that interrupt reading — including newsletter signups, exit-intent prompts, age gates the law doesn't require, and cookie banners beyond the legal minimum.
-2. Auto-playing media. No video, audio, GIFs, or animation that begins without the reader's tap.
+2. Auto-playing media. No video, audio, GIFs, or animation that begins without the reader's tap — except the single ambient masthead glow permitted in Accessibility & quiet design #3, which is decorative, reduced-motion-aware, and non-flashing.
 3. Public comments, in any form. Not "coming soon", not gated, not moderated-but-open. The absence *is* the policy.
 4. Newsletter signup, email capture, "subscribe" buttons, or follow prompts. RSS is acceptable (pull, not push); push channels are not.
 5. Custom social-media share buttons that load third-party tracking scripts. Only the phone-native share sheet.
