@@ -3,6 +3,7 @@ import ThisWeek from '../components/Home/ThisWeek'
 import FeaturedWindow from '../components/Home/FeaturedWindow'
 import RoomGallerySection from '../components/Home/RoomGallerySection'
 import { getMood, getQuote, getListening, getFeatured } from '../lib/content'
+import SpotlightBackground from '../components/ui/spotlight-background'
 
 function Home() {
   const mood = getMood()
@@ -14,7 +15,9 @@ function Home() {
 
   return (
     <>
-      <Hello />
+      <SpotlightBackground>
+        <Hello />
+      </SpotlightBackground>
       <ThisWeek mood={mood} quote={quote} listening={listening} />
       <section aria-label="Featured this week">
         <FeaturedWindow kind="art" item={featuredArt} />
