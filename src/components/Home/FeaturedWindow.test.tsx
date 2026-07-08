@@ -34,6 +34,23 @@ describe('FeaturedWindow', () => {
     )
   })
 
+  it('adds the © usage badge for art', () => {
+    renderWithRouter(<FeaturedWindow kind="art" item={item} />)
+    expect(
+      screen.getByRole('link', { name: /usage terms for this artwork/i }),
+    ).toBeInTheDocument()
+  })
+
+  it('leaves non-art images plain (no © badge)', () => {
+    renderWithRouter(<FeaturedWindow kind="writing" item={item} />)
+    expect(
+      screen.queryByRole('link', { name: /usage terms for this artwork/i }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.getByAltText('A resin piece with swirling teal'),
+    ).toBeInTheDocument()
+  })
+
   it('renders nothing when item is null', () => {
     const { container } = renderWithRouter(
       <FeaturedWindow kind="art" item={null} />,

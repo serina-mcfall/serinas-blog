@@ -81,10 +81,24 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
       <h2>
         Moonlight pour
       </h2>
-      <img
-        alt="A resin piece with swirling teal and pearlescent white"
-        src="/images/featured/moonlight-pour.jpg"
-      />
+      <div
+        class="art-frame "
+      >
+        <img
+          alt="A resin piece with swirling teal and pearlescent white"
+          class="art-frame__img"
+          src="/images/featured/moonlight-pour.jpg"
+        />
+        <a
+          aria-label="Usage terms for this artwork"
+          class="art-frame__badge"
+          data-discover="true"
+          data-state="closed"
+          href="/about#usage-policy"
+        >
+          ©
+        </a>
+      </div>
       <p>
         Six pours to settle the swirl.
       </p>

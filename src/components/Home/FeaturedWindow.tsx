@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { FeaturedItem } from '../../lib/types'
+import { ArtImage } from '../ui/art-image'
 
 interface Props {
   kind: 'art' | 'writing' | 'travel'
@@ -11,7 +12,11 @@ function FeaturedWindow({ kind, item }: Props) {
   return (
     <article aria-label={`Featured ${kind}`}>
       <h2>{item.title}</h2>
-      <img src={item.image} alt={item.imageAlt} />
+      {kind === 'art' ? (
+        <ArtImage src={item.image} alt={item.imageAlt} />
+      ) : (
+        <img src={item.image} alt={item.imageAlt} />
+      )}
       <p>{item.caption}</p>
       {item.link && <Link to={item.link}>View more →</Link>}
     </article>

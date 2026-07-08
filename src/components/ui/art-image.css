@@ -1,0 +1,57 @@
+/* An artwork image with a © usage marker tucked into its corner. The badge is a
+   link to the usage policy; the lantern tooltip (lamp-tooltip.css) previews the
+   terms. Subtle at rest, it brightens on hover/focus. */
+
+.art-frame {
+  position: relative;
+  display: inline-block;
+  line-height: 0; /* removes the inline-image baseline gap */
+}
+
+.art-frame__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius, 0.5rem);
+}
+
+/* The © badge: a small round chip, bottom-right, deep-ink translucent with cream
+   glyph so it reads on light or dark artwork. */
+.art-frame__badge {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: rgba(36, 26, 18, 0.66); /* deep ink, translucent */
+  color: var(--color-bg); /* cream */
+  font-size: 0.9rem;
+  line-height: 1;
+  text-decoration: none; /* beats the global a { underline } */
+  opacity: 0.62;
+  transition:
+    opacity 140ms ease,
+    background-color 140ms ease;
+}
+
+.art-frame:hover .art-frame__badge,
+.art-frame__badge:hover,
+.art-frame__badge:focus-visible {
+  opacity: 1;
+  background: rgba(36, 26, 18, 0.88);
+}
+
+.art-frame__badge:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-frame__badge {
+    transition: none;
+  }
+}
