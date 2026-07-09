@@ -104,15 +104,15 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
       aria-label="Featured art"
     >
       <h2>
-        Moonlight pour
+        Moonlight
       </h2>
       <div
         class="art-frame "
       >
         <img
-          alt="A resin piece with swirling teal and pearlescent white"
+          alt="Digital painting of a lantern-lit enchanted forest at night — a woman in a green gown reaches toward a glowing butterfly, with a waterfall, a torii gate, roses and glowing mushrooms around her"
           class="art-frame__img"
-          src="/images/featured/moonlight-pour.jpg"
+          src="/images/moonlight.webp"
         />
         <a
           aria-label="Usage terms for this artwork"
@@ -125,7 +125,7 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
         </a>
       </div>
       <p>
-        Six pours to settle the swirl.
+        A digital painting.
       </p>
       <a
         data-discover="true"
@@ -141,8 +141,8 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
         From a story in progress
       </h2>
       <img
-        alt="An open notebook on a wooden desk"
-        src="/images/featured/writing-snippet.jpg"
+        alt="Digital painting of a vast candlelit library at night — books drift upward through the air toward a glowing star-map dome, a figure in a dark gown floating among them, with purple blossoms and constellations"
+        src="/images/library-of-dreams.webp"
       />
       <p>
         The first line of something larger.
@@ -158,11 +158,11 @@ exports[`Home > renders without crashing and has no a11y violations 1`] = `
       aria-label="Featured travel"
     >
       <h2>
-        Wellington harbour at dawn
+        Auckland harbour at night
       </h2>
       <img
-        alt="Calm water reflecting pink-violet sky"
-        src="/images/featured/wellington-dawn.jpg"
+        alt="Photograph of Auckland's harbour and city skyline at night, the lit Sky Tower and buildings reflecting on calm dark water"
+        src="/images/auckland-harbour.webp"
       />
       <p>
         I forgot how quiet the city is at five am.

@@ -1,8 +1,8 @@
 ---
-title: "Moonlight pour"
-image: "/images/featured/moonlight-pour.jpg"
-imageAlt: "A resin piece with swirling teal and pearlescent white"
+title: "Moonlight"
+image: "/images/moonlight.webp"
+imageAlt: "Digital painting of a lantern-lit enchanted forest at night — a woman in a green gown reaches toward a glowing butterfly, with a waterfall, a torii gate, roses and glowing mushrooms around her"
 link: "/art/hello-from-this-room"
-caption: "Six pours to settle the swirl."
+caption: "A digital painting."
 updated: 2026-05-13
 ---
